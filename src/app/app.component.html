@@ -13,7 +13,6 @@
             [(ngModel)]="idtype"
             [value]="item.value" 
             [checked]="idtype == item.value"
-            (change)="radioChange(i)"
             >{{item.label}}
         </label>
       </ng-container>
@@ -28,7 +27,6 @@
         <option value="0"></option>
         <option *ngFor="let item of data2" 
           [value]="item.value"
-          (change)="rollChange()"
         >{{item.label}}</option>
       </select>
     </div><br/>
