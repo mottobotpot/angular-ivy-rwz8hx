@@ -24,19 +24,20 @@ export class AppComponent {
   data3 = [
     { label: 'パスワードを保存', value: 'checkbox', selected: false }
   ];
+  
   show() {
     if(this.data3[0].selected==true){
       alert('ログインID：' + this.user.mail + '\n'
-      + 'IDの種類：' + this.data.values + '\n'
+      + 'IDの種類：' + this.idtype + '\n'
       + 'パスワード：' + this.user.passwd + '\n'
-      + '言語：' + this.data2.values + '\n'
+      + '言語：' + this.roll + '\n'
       + 'パスワードを保存：保存する\n'
       );
     }else{
       alert('ログインID：' + this.user.mail + '\n'
-      + 'IDの種類：' + this.data.values + '\n'
+      + 'IDの種類：' + this.idtype + '\n'
       + 'パスワード：' + this.user.passwd + '\n'
-      + '言語：' + this.data2.values + '\n'
+      + '言語：' + this.roll + '\n'
       + 'パスワードを保存：保存しない\n'
       );
     }
