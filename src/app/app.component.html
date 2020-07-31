@@ -1,0 +1,49 @@
+    <label>Login</label><br/><br/>
+    <form #myForm="ngForm" (ngSubmit)="show()" novalidate>
+    <div>
+      <label for="mail">ログインID</label><br /><br/>
+      <input id="mail" name="mail" type="email"
+        [(ngModel)]="user.mail" #mail="ngModel" />
+    </div><br/>
+    <div>
+      <label>IDの種類</label><br /><br/>
+      <ng-container *ngFor="let item of data; index as i">
+        <label for="idtype">
+          <input type="radio" name="idtype"
+            [(ngModel)]="idtype"
+            [value]="item.value" [checked]="idtype == item.value"
+            >{{item.label}}
+        </label>
+      </ng-container>
+    </div><br/>
+    <div>
+      <label for="passwd">パスワード：</label><br />
+      <input id="passwd" name="passwd" type="password" [(ngModel)]="user.passwd" #passwd="ngModel" />
+    </div><br/>
+    <div>
+      <label for="roll">言語</label><br />
+      <select name="roll" [(ngModel)]="roll">
+        <option value="0"></option>
+        <option *ngFor="let item of data2" [value]="item.value"
+        >{{item.label}}</option>
+      </select>
+    </div><br/>
+    <div>
+      <ng-container *ngFor="let item of data3; index as i">
+        <label>
+          <input type="checkbox" name="checkbox{{i}}"
+            [(ngModel)]="data3[i].selected"
+            [value]="item.value"
+            >{{item.label}}
+        </label><br />
+      </ng-container>
+    </div><br/>
+    <div>
+      <input type="submit" value="Login" 
+        [disabled]="myForm.invalid" />   
+    </div><br/>
+    <div>
+      <a href="#">パスワードをお忘れですか？</a>
+    </div>
+    </form>
+
