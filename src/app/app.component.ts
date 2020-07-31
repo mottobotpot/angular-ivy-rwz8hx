@@ -27,16 +27,16 @@ export class AppComponent {
   show() {
     if(this.data3[0].selected==true){
       alert('ログインID：' + this.user.mail + '\n'
-      + 'IDの種類：' + this.data + '\n'
+      + 'IDの種類：' + this.data.values + '\n'
       + 'パスワード：' + this.user.passwd + '\n'
-      + '言語：' + this.data2 + '\n'
+      + '言語：' + this.data2.values + '\n'
       + 'パスワードを保存：保存する\n'
       );
     }else{
       alert('ログインID：' + this.user.mail + '\n'
-      + 'IDの種類：' + this.data + '\n'
+      + 'IDの種類：' + this.data.values + '\n'
       + 'パスワード：' + this.user.passwd + '\n'
-      + '言語：' + this.data2 + '\n'
+      + '言語：' + this.data2.values + '\n'
       + 'パスワードを保存：保存しない\n'
       );
     }
